@@ -4,6 +4,8 @@ import cors from 'cors';
 
 const app = express();
 
+const PORT = process.env.PORT || 3002;
+
 app.use(cors());
 
 app.get('/', async (req, res) => {
@@ -11,6 +13,6 @@ app.get('/', async (req, res) => {
   res.json(await response.json());
 });
 
-app.listen(3002, () => {
-  console.log('listening on port 3002');
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
