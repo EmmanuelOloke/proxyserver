@@ -13,6 +13,11 @@ app.get('/', async (req, res) => {
   res.json(await response.json());
 });
 
+app.get(`/showd/${fruitName}`, async (req, res) => {
+  const response = await fetch(`https://fruityvice.com/api/fruit/${fruitName}`);
+  res.json(await response.json());
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
